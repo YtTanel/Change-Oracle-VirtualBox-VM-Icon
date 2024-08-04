@@ -2,8 +2,8 @@
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-# Set Virtualbox Path
-Set-Location -Path "C:\Program Files\Oracle\VirtualBox"
+# Set Original Path
+$ogpath = Get-Location
 
 # Script Directory
 $scriptDir = Split-Path -Path $MyInvocation.MyCommand.Path -Parent
@@ -106,6 +106,9 @@ $button.Add_Click({
 
 $submitbutton.Add_Click({
 
+    # Set Virtualbox Path
+    Set-Location -Path "C:\Program Files\Oracle\VirtualBox"
+
     # Make label invisible if all the fields are filled
     $errorlabel.Visible = $false
 
@@ -131,6 +134,12 @@ $submitbutton.Add_Click({
 # When typing virtual machines name or uploading an image
 $vmnametextbox.Add_TextChanged({
     $cmdtextbox.Text = ".\VBoxManage.exe modifyvm `"$($vmnametextbox.Text)`" --iconfile `"$($filebrowser.FileName)`""
+})
+
+$form.Add_FormClosing({
+
+   Set-Location -Path $ogpath 
+
 })
 
 # Add all the controls
