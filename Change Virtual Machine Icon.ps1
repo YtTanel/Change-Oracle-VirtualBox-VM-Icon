@@ -53,7 +53,7 @@ $button.Location = New-Object System.Drawing.Point(20, 90)
 $errorlabel = New-Object Windows.Forms.Label
 $errorlabel.Text = "Add virtual machine name or image"
 $errorlabel.AutoSize = $true
-$errorlabel.Location = New-Object Drawing.Point(140,400)
+$errorlabel.Location = New-Object Drawing.Point(145,400)
 $errorlabel.ForeColor = [System.Drawing.Color]::Red
 $errorlabel.Visible = $false
 
