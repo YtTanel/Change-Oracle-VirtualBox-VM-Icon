@@ -83,7 +83,7 @@ $form.FormBorderStyle = "FixedDialog"
 # Filter File Explorer .png & .jpg and set the initial directory to Downloads folder 
 $filebrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{
         InitialDirectory = [System.IO.Path]::Combine([Environment]::GetFolderPath('UserProfile'), 'Downloads')
-        Filter           = 'Images (*.png;*.jpg)|*.png;*.jpg'
+        Filter           = 'Images (*.png*)|*.png'
 }
 
 
