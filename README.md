@@ -1,6 +1,9 @@
 # Change Virtual Machine Icon in Oracle VirtualBox
 Made a Powershell script that allows you to change your Virtual Machine icon in Oracle VirtualBox using a simple GUI instead of a command line.
 
+![image](https://github.com/user-attachments/assets/3dac9bc9-dd99-4c2f-8864-a327f1343670)
+
+
 # Setup
 Download script or clone repository to get started, nothing else to it.
 
@@ -12,4 +15,17 @@ Download script or clone repository to get started, nothing else to it.
 & '.\Change Virtual Machine Icon.ps1'
 ```
 
+# GUI
+
+![image](https://github.com/user-attachments/assets/f7aa44c8-ae57-4721-8be8-77333b927bb9)
+
+Required parameters:
+- Virtual Machine name <br>
+- Image <br>
+
+For images, VBoxManage.exe accepts .png format. You need to convert .jpeg images to .png inorder to use them as virtual machine icons.
+Below is the command that will be executed when "Change Icon" is clicked.
+
+
+ 
 This was a little project I wanted to do, I rarely use PowerShell so this was a lot of fun :) 
