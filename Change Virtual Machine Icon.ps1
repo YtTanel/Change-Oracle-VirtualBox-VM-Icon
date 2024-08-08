@@ -80,7 +80,9 @@ $form.StartPosition = "CenterScreen"
 $form.Icon = New-Object System.Drawing.Icon($imagePath)
 $form.FormBorderStyle = "FixedDialog"
 
-# Filter File Explorer .png & .jpg and set the initial directory to Downloads folder 
+# Filter File Explorer .png and set the initial directory to Downloads folder
+# VBoxManage.exe does not seem to accept .jpg files for icons, so convert or download an image thats in .png format
+
 $filebrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{
         InitialDirectory = [System.IO.Path]::Combine([Environment]::GetFolderPath('UserProfile'), 'Downloads')
         Filter           = 'Images (*.png*)|*.png'
