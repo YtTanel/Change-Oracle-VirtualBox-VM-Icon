@@ -10,6 +10,8 @@ Download script or clone repository to get started, nothing else to it.
 ### Ways to run it 
 1. Right click on the file and click *Run with PowerShell*
 
+![image](https://github.com/user-attachments/assets/ea849f03-e7ed-4c33-8f8c-4025818c8e91)
+
 2. Open PowerShell, go to the directory where the file is located and run command:
 ```
 & '.\Change Virtual Machine Icon.ps1'
@@ -17,14 +19,15 @@ Download script or clone repository to get started, nothing else to it.
 
 # GUI
 
-![image](https://github.com/user-attachments/assets/f7aa44c8-ae57-4721-8be8-77333b927bb9)
+![image](https://github.com/user-attachments/assets/708c4e0c-7237-478a-95fb-62693b345884)
+
 
 Required parameters:
 - Virtual Machine name <br>
 - Image <br>
 
 For images, VBoxManage.exe accepts .png format. You need to convert .jpeg images to .png inorder to use them as virtual machine icons.
-Below is the command that will be executed when "Change Icon" is clicked.
+Below is the command that will be executed when **Change Icon** button is clicked.
 
 
  
