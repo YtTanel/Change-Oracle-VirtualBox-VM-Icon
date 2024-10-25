@@ -19,7 +19,7 @@ Download script to get started.
 
 # GUI
 
-![image](https://github.com/user-attachments/assets/708c4e0c-7237-478a-95fb-62693b345884)
+![image](https://github.com/user-attachments/assets/50dcb184-d0a4-4209-8090-6e7513ce5acb)
 
 
 Required parameters:
