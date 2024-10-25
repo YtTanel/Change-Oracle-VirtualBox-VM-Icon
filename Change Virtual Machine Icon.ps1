@@ -43,11 +43,10 @@ $imagePath = Join-Path -Path $scriptDir -ChildPath "images\icon.ico"
 # Text box for VM Name
 $vmnametextbox = New-Object System.Windows.Forms.TextBox
 $vmnametextbox.Multiline = $false
-$vmnametextbox.Size = New-Object System.Drawing.Size(150,150)
+$vmnametextbox.Size = New-Object System.Drawing.Size(430,150)
 $vmnametextbox.Location = New-Object System.Drawing.Size(20,50)
 $vmnametextbox.Font = New-Object System.Drawing.Font("MS Shell Dlg",12,[System.Drawing.FontStyle]::Regular)
-
-
+$vmnametextbox.MaxLength = 75
 
 # Command Textbox properties
 $cmdtextbox = New-Object System.Windows.Forms.TextBox
@@ -61,7 +60,7 @@ $cmdtextbox.ReadOnly = $true
 $vmnamelabel = New-Object Windows.Forms.Label
 $vmnamelabel.Text = "Virtual Machine Name"
 $vmnamelabel.AutoSize = $true
-$vmnamelabel.Location = New-Object Drawing.Point(20,30)
+$vmnamelabel.Location = New-Object Drawing.Point(18,30)
 $vmnamelabel.ForeColor = [System.Drawing.Color]::Black
 
 # Command label control properties
@@ -79,7 +78,7 @@ $button.Location = New-Object System.Drawing.Point(20, 90)
 
 # Error label control properties
 $errorlabel = New-Object Windows.Forms.Label
-$errorlabel.Text = "Add virtual machine name or image"
+$errorlabel.Text = ""
 $errorlabel.AutoSize = $true
 $errorlabel.Location = New-Object Drawing.Point(150,400)
 $errorlabel.ForeColor = [System.Drawing.Color]::Red
@@ -134,6 +133,13 @@ $button.Add_Click({
 
 $submitbutton.Add_Click({
 
+    if ($vmnametextbox.Text.Length -eq 0) {
+        
+          $errorlabel.Text = "Virtual Machine name too short"
+          $errorlabel.Visible = $true
+
+    } else {
+
     # Set Virtualbox Path
     Set-Location -Path "C:\Program Files\Oracle\VirtualBox"
 
@@ -147,6 +153,7 @@ $submitbutton.Add_Click({
     # Make error label visible
     if ($output -like 'VBoxManage.exe:*') {
 
+    $errorlabel.Text = "Add virtual machine name or image"
     $errorlabel.Visible = $true
 
     # If none of the fields are empty 
@@ -154,6 +161,7 @@ $submitbutton.Add_Click({
     } else {
 
     [System.Windows.Forms.MessageBox]::Show('Icon successfully changed', 'Change Virtual Machine Icon', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information) 
+    }
     }
 })
 
