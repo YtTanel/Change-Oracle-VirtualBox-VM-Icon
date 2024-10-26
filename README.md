@@ -7,7 +7,7 @@ Made a Powershell script that allows you to change your Virtual Machine icon in 
 # Setup
 Download the script to get started.
 
-### Ways to run it 
+### Ways to run script
 1. Right click on the file and click *Run with PowerShell*
 
 ![image](https://github.com/user-attachments/assets/ea849f03-e7ed-4c33-8f8c-4025818c8e91)
